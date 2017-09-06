@@ -1,0 +1,69 @@
+<p>
+  wall works!
+</p>
+<div>
+    <button
+        id="btnUnitFeet" name="btnUnitFeet"
+        (click)="setUnit('feet')"
+        >FEET</button>
+    <button
+        id="btnUnitMeter" name="btnUnitMeter"
+        (click)="setUnit('meter')"
+        >METERS</button>
+</div>
+<div>
+    <h1>Room</h1>
+    <label for="width">{{title.width}}</label>
+    <input
+        (change)="changeWall()"
+        [(ngModel)]="room.width"
+        placeholder="width" />
+    <label for="height">{{title.height}}</label>
+    <input
+        (change)="changeWall()"
+        [(ngModel)]="room.height"
+        placeholder="height" />
+</div>
+<div>
+    <h1>Video</h1>
+    <label>Rows</label>
+    <input
+        (change)="changeWall()"
+        [(ngModel)]="rows" />
+        <button (click)="chageVideoCount('ru')">UP</button>
+        <button (click)="chageVideoCount('rd')">DN</button>
+    <label>Cols</label>
+    <input
+        (change)="changeWall()"
+        [(ngModel)]="cols" />
+        <button (click)="chageVideoCount('cu')">UP</button>
+        <button (click)="chageVideoCount('cd')">DN</button>
+</div>
+<div>
+    <h1>Model</h1>
+    <label> width {{model.width}} height {{model.height}}</label>
+    <button
+        id="btnRotate" name="btnRotate"
+        (click)="rotateVideo()"
+        >회전</button>
+</div>
+<div>
+    <h1>Wall</h1>
+    <table border=1 width="{{room.width}}">
+        <tr>
+            <td width={{room.left}} align=center></td>
+            <td width={{videoWidth}} align=center><span>{{room.top}}</span></td>
+            <td width={{room.right}} align=center></td>
+        </tr>
+        <tr>
+            <td align=center><span>{{room.left}}}}</span></td>
+            <td style="background-image:url(assets/images/background.gif);" height={{videoHeight}} align=center><span>{{videoWidth}}/{{videoHeight}}</span></td>
+            <td align=center> <span>{{room.right}}</span></td>
+        </tr>
+        <tr>
+            <td align=center></td>
+            <td align=center><span>{{room.bottom}}</span></td>
+            <td align=center></td>
+        </tr>
+    </table>
+</div>
